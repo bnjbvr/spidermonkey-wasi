@@ -25,7 +25,9 @@ var Module = {
     }
 };
 
-Module.wasmSource = './helloworld-c.wasm';
+let wasmSource = scriptArgs[0] || './helloworld-c.wasm';
+console.log('Running wasm source', wasmSource);
+Module.wasmSource = wasmSource;
 
 load('./polyfill.js');
 drainJobQueue();
